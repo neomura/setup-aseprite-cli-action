@@ -1,7 +1,8 @@
 set -e
 
-git init
-git submodule update --init --recursive
+echo GITHUB_ACTION_REPOSITORY
+echo GITHUB_ACTION_REF
+#git clone https://github.com/neomura/setup-aseprite-cli-action --recurse-submodules --depth 1 clone
 
 if [ "$(uname)" == "Darwin" ]; then
   brew install ninja
