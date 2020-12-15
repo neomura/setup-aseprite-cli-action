@@ -1,5 +1,7 @@
 set -e
 
+ls -a
+
 git submodule update --init --recursive
 
 if [ "$(uname)" == "Darwin" ]; then
