@@ -1,7 +1,7 @@
 set -e
 
 ls -a
-ls -a submodules/submodules/aseprite
+ls -a submodules/aseprite/aseprite
 
 git submodule update --init --recursive
 
