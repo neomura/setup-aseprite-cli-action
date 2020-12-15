@@ -12,7 +12,7 @@ runs:
     shell: bash
   - run: ls
     shell: bash
-    working-directory: $GITHUB_ACTION_PATH
-  - run: $GITHUB_ACTION_PATH/build.sh
+    working-directory: ${{ GITHUB.ACTION_PATH }}
+  - run: ./build.sh
     shell: bash
-    working-directory: $GITHUB_ACTION_PATH
+    working-directory: ${{ GITHUB.ACTION_PATH }}
