@@ -1,8 +1,6 @@
 set -e
 
-ls -a
-ls -a submodules/aseprite/aseprite
-
+git init
 git submodule update --init --recursive
 
 if [ "$(uname)" == "Darwin" ]; then
