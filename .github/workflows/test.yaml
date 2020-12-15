@@ -16,4 +16,4 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - run: ./build.sh
+    - run: bash build.sh
