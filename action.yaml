@@ -6,4 +6,5 @@ branding:
 runs:
   using: composite
   steps:
-  - run: bash build.sh
+  - run: ./build.sh
+    shell: bash
