@@ -1,6 +1,4 @@
 set -e
-#sudo apt-get update
-#sudo apt-get install libx11-dev libxcursor-dev xorg-dev ninja-build -y
 sudo apt-get update
 sudo apt-get install ninja-build xorg-dev
 cmake -E make_directory build
