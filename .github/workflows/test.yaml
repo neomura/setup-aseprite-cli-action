@@ -16,3 +16,6 @@ jobs:
     steps:
     - uses: ilammy/msvc-dev-cmd@v1
     - run: bash build.sh
+      env:
+        NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
+        NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
