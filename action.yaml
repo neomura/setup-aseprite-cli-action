@@ -6,6 +6,8 @@ branding:
 runs:
   using: composite
   steps:
+  - run: ls $GITHUB_ACTION_PATH
+    shell: bash
   - run: $GITHUB_ACTION_PATH/build.sh
     shell: bash
     working-directory: $GITHUB_ACTION_PATH
