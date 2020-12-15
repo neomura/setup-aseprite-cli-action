@@ -1,5 +1,8 @@
 name: setup-aseprite-cli-action
 description: github action to build and install aseprite cli
+branding:
+  icon: terminal
+  color: white
 runs:
   using: composite
   steps:
