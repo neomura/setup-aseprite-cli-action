@@ -1,0 +1,6 @@
+name: setup-aseprite-cli-action
+description: github action to build and install aseprite cli
+runs:
+  using: composite
+  steps:
+  - run: bash build.sh
