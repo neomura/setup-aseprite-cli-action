@@ -8,3 +8,4 @@ runs:
   steps:
   - run: $GITHUB_ACTION_PATH/build.sh
     shell: bash
+    working-directory: $GITHUB_ACTION_PATH
