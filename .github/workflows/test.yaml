@@ -15,7 +15,5 @@ jobs:
         - macos-10.15
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: recursive
     - uses: ilammy/msvc-dev-cmd@v1
     - run: bash build.sh

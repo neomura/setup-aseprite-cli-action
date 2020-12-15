@@ -1,5 +1,7 @@
 set -e
 
+git submodule update --init --recursive
+
 if [ "$(uname)" == "Darwin" ]; then
   brew install ninja
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
