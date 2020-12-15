@@ -5,6 +5,8 @@ if [ "$(uname)" == "Darwin" ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   sudo apt-get update
   sudo apt-get install ninja-build xorg-dev
+else
+  choco install ninja
 fi
 
 cmake -E make_directory build
