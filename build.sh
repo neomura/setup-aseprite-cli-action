@@ -1,6 +1,8 @@
 set -e
 
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+if [ "$(uname)" == "Darwin" ]; then
+  brew install ninja
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   sudo apt-get update
   sudo apt-get install ninja-build xorg-dev
 fi
