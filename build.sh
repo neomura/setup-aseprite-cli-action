@@ -1,5 +1,4 @@
 set -e
-#git submodule update --init --recursive
 #sudo apt-get update
 #sudo apt-get install libx11-dev libxcursor-dev xorg-dev ninja-build -y
 cmake -E make_directory build
