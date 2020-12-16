@@ -10,6 +10,7 @@ jobs:
         - windows-2016
         - ubuntu-20.04
         - ubuntu-18.04
+        - ubuntu-16.04
         - macos-11.0
         - macos-10.15
     steps:
@@ -22,4 +23,4 @@ jobs:
     - run: git submodule update --init --recursive submodules/bats-core/bats-core
     - run: git submodule update --init --recursive submodules/ztombol/bats-assert
     - run: git submodule update --init --recursive submodules/ztombol/bats-support
-    - run: ./test.sh
+    - run: bash ./test.sh
