@@ -20,4 +20,4 @@ jobs:
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
-    - run: bash ./test.sh
+    - run: ./test.sh
