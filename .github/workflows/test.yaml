@@ -20,4 +20,7 @@ jobs:
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - run: git submodule update --init --recursive submodules/bats-core/bats-core
+    - run: git submodule update --init --recursive submodules/ztombol/bats-assert
+    - run: git submodule update --init --recursive submodules/ztombol/bats-support
     - run: ./test.sh

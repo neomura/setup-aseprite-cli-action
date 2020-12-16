@@ -4,15 +4,6 @@ load "./submodules/ztombol/bats-support/load"
 load "./submodules/ztombol/bats-assert/load"
 
 @test "makes the aseprite executable accessible to scripts" {
-  run git submodule update --init --recursive submodules/bats-core/bats-core
-  assert_success
-
-  run git submodule update --init --recursive submodules/ztombol/bats-assert
-  assert_success
-
-  run git submodule update --init --recursive submodules/ztombol/bats-support
-  assert_success
-
   run rm -r ./test/actual
 
   run aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
