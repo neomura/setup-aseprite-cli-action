@@ -16,11 +16,11 @@ example8.png
 example9.png")
 
 if [ "$(uname)" == "Darwin" ]; then
-  brew install imagemagick jq
+  brew install imagemagick
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  sudo apt-get install imagemagick jq
+  sudo apt-get install imagemagick
 else
-  choco install imagemagick jq
+  choco install imagemagick
 fi
 
 cmp <(identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
