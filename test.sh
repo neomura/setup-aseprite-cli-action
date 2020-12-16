@@ -23,15 +23,15 @@ else
   choco install imagemagick jq
 fi
 
-cmp <(identify -format "%wx%h" ./test/actual/example1.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example2.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example3.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example4.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example5.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example6.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example7.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example8.png) <(echo "48x32")
-cmp <(identify -format "%wx%h" ./test/actual/example9.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example2.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example3.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example4.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example5.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example6.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example7.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example8.png) <(echo "48x32")
+cmp <(identify -format "%wx%h\n" ./test/actual/example9.png) <(echo "48x32")
 
 convert ./test/actual/example1.png ./test/actual/example1.rgba
 convert ./test/actual/example2.png ./test/actual/example2.rgba
