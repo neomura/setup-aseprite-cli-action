@@ -15,17 +15,6 @@ example7.png
 example8.png
 example9.png")
 
-if [ "$(uname)" == "Darwin" ]; then
-  brew install imagemagick
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  git clone https://github.com/SoftCreatR/imei
-  cd imei
-  sudo ./imei.sh
-  cd ..
-else
-  choco install imagemagick
-fi
-
 cmp <(magick identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
 cmp <(magick identify -format "%wx%h\n" ./test/actual/example2.png) <(echo "48x32")
 cmp <(magick identify -format "%wx%h\n" ./test/actual/example3.png) <(echo "48x32")

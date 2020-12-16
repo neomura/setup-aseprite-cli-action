@@ -19,4 +19,5 @@ jobs:
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - run: bash ./install-test-dependencies.sh
     - run: bash ./test.sh
