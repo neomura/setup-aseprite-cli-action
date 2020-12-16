@@ -17,29 +17,34 @@ example9.png")
 
 if [ "$(uname)" == "Darwin" ]; then
   brew install imagemagick
-elif [ "$(expr substr $(uname -s) 1 5)" != "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  git clone https://github.com/SoftCreatR/imei
+  cd imei
+  sudo ./imei.sh
+  cd ..
+else
   choco install imagemagick
 fi
 
-cmp <(identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example2.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example3.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example4.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example5.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example6.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example7.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example8.png) <(echo "48x32")
-cmp <(identify -format "%wx%h\n" ./test/actual/example9.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example2.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example3.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example4.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example5.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example6.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example7.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example8.png) <(echo "48x32")
+cmp <(magick identify -format "%wx%h\n" ./test/actual/example9.png) <(echo "48x32")
 
-convert ./test/actual/example1.png ./test/actual/example1.rgba
-convert ./test/actual/example2.png ./test/actual/example2.rgba
-convert ./test/actual/example3.png ./test/actual/example3.rgba
-convert ./test/actual/example4.png ./test/actual/example4.rgba
-convert ./test/actual/example5.png ./test/actual/example5.rgba
-convert ./test/actual/example6.png ./test/actual/example6.rgba
-convert ./test/actual/example7.png ./test/actual/example7.rgba
-convert ./test/actual/example8.png ./test/actual/example8.rgba
-convert ./test/actual/example9.png ./test/actual/example9.rgba
+magick convert ./test/actual/example1.png ./test/actual/example1.rgba
+magick convert ./test/actual/example2.png ./test/actual/example2.rgba
+magick convert ./test/actual/example3.png ./test/actual/example3.rgba
+magick convert ./test/actual/example4.png ./test/actual/example4.rgba
+magick convert ./test/actual/example5.png ./test/actual/example5.rgba
+magick convert ./test/actual/example6.png ./test/actual/example6.rgba
+magick convert ./test/actual/example7.png ./test/actual/example7.rgba
+magick convert ./test/actual/example8.png ./test/actual/example8.rgba
+magick convert ./test/actual/example9.png ./test/actual/example9.rgba
 
 cmp ./test/expected/example1.rgba ./test/actual/example1.rgba
 cmp ./test/expected/example2.rgba ./test/actual/example2.rgba
