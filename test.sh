@@ -17,9 +17,7 @@ example9.png")
 
 if [ "$(uname)" == "Darwin" ]; then
   brew install imagemagick
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  sudo apt-get install imagemagick
-else
+elif [ "$(expr substr $(uname -s) 1 5)" != "Linux" ]; then
   choco install imagemagick
 fi
 
