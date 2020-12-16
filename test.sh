@@ -6,7 +6,7 @@ load "./submodules/ztombol/bats-assert/load"
 @test "makes the aseprite executable accessible to scripts" {
   run rm -r ./test/actual
 
-  run ./build/bin/aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
+  run aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
   assert_success
 
   run ls ./test/actual
