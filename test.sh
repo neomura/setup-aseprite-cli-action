@@ -26,7 +26,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   cd ..
 else
   choco install imagemagick
-  MAGICK=$(find "/mnt/c/Program Files" -name imagick.exe -print -quit)
+  MAGICK=$(find "C:/Program Files" -name imagick.exe -print -quit)
 fi
 
 cmp <($MAGICK identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
