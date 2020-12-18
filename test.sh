@@ -25,7 +25,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   sudo ./imei.sh
   cd ..
 else
-  MAGICK=magick.exe
+  MAGICK=$(find "/mnt/c/Program Files" -name imagick.exe -print -quit)
   choco install imagemagick
 fi
 
