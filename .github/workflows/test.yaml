@@ -19,4 +19,8 @@ jobs:
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
     - run: bash ./test.sh
