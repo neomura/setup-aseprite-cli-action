@@ -29,6 +29,8 @@ else
   MAGICK=$(find "C:/Program Files" -name imagick.exe -print -quit)
 fi
 
+echo Using ImageMagick ${MAGICK}...
+
 cmp <($MAGICK identify -format "%wx%h\n" ./test/actual/example1.png) <(echo "48x32")
 cmp <($MAGICK identify -format "%wx%h\n" ./test/actual/example2.png) <(echo "48x32")
 cmp <($MAGICK identify -format "%wx%h\n" ./test/actual/example3.png) <(echo "48x32")
