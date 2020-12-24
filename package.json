@@ -3,7 +3,7 @@
   "description": "github action to build and install aseprite cli",
   "version": "0.0.0",
   "engines": {
-    "node": ">=10.19.0"
+    "node": ">=14.15.3"
   },
   "engineStrict": true,
   "publishConfig": {
