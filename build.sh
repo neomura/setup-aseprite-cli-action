@@ -10,7 +10,7 @@ NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRANCH=${NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRA
 git clone https://github.com/$NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY --branch $NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRANCH --depth 1 clone
 
 cd clone
-git submodule update --init --recursive submodules/aseprite/aseprite
+git submodule update --init --recursive --depth 1 submodules/aseprite/aseprite
 cd ..
 
 if [ "$(uname)" == "Darwin" ]; then
