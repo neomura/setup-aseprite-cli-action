@@ -24,7 +24,7 @@ jobs:
         node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
     - run: bash ./test.sh
-    - run: rm -rf clone
+    - run: bash -c "rm -rf clone"
     - run: bash ./build.sh
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
