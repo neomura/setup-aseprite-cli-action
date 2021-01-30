@@ -4,12 +4,14 @@ set -e
 # (including submodules) on publish, so we have to re-clone our own repository
 # to get the Aseprite submodule we plan to build.
 
-NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRANCH=${NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF#refs/heads/}
-NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRANCH=${NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRANCH#refs/tags/}
-
-git clone https://github.com/$NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY --branch $NEOMURA_SETUP_ASEPRITE_CLI_ACTION_BRANCH --depth 1 clone
-
+mkdir clone
 cd clone
+
+git init
+git remote add origin https://github.com/$NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY
+git fetch origin $NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF:temp
+git checkout temp
+
 git submodule update --init --recursive submodules/aseprite/aseprite
 cd ..
 
