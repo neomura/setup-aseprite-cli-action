@@ -22,7 +22,7 @@ jobs:
     - id: cache
       uses: actions/cache@v2
       with:
-        path: clone/bin
+        path: ${{ GITHUB.ACTION_PATH }}/build/bin
         key: neomura-setup-cli-action-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
       if: steps.cache.outputs.cache-hit != 'true'
@@ -56,7 +56,7 @@ jobs:
     - id: cache
       uses: actions/cache@v2
       with:
-        path: clone/bin
+        path: ${{ GITHUB.ACTION_PATH }}/build/bin
         key: neomura-setup-cli-action-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
       if: steps.cache.outputs.cache-hit != 'true'
