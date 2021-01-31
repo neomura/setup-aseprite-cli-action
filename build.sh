@@ -27,6 +27,14 @@ fi
 cmake -E make_directory build
 cmake -E chdir build cmake -G Ninja -DENABLE_UI=OFF ../clone/submodules/aseprite/aseprite
 cd build
-ninja
+
+if [ "$(uname)" == "Darwin" ]; then
+  ninja
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  ninja
+else
+  ninja -j 1
+fi
+
 
 echo "$PWD/bin" >> $GITHUB_PATH
