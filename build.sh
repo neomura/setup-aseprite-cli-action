@@ -12,7 +12,7 @@ git remote add origin https://github.com/$NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPO
 git fetch origin $NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF:temp
 git checkout temp
 
-git submodule update --init --recursive submodules/aseprite/aseprite
+git submodule update --init --recursive --depth 1 submodules/aseprite/aseprite
 cd ..
 
 if [ "$(uname)" == "Darwin" ]; then
@@ -27,6 +27,14 @@ fi
 cmake -E make_directory build
 cmake -E chdir build cmake -G Ninja -DENABLE_UI=OFF ../clone/submodules/aseprite/aseprite
 cd build
-ninja
+
+if [ "$(uname)" == "Darwin" ]; then
+  ninja
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  ninja
+else
+  ninja -j 1
+fi
+
 
 echo "$PWD/bin" >> $GITHUB_PATH
