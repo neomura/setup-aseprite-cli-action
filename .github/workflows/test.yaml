@@ -23,7 +23,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: clone/bin
-        key: ${{ runner.os }}-${{ steps.prepare.outputs.sha }}
+        key: ${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
       if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./build.sh
@@ -57,7 +57,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: clone/bin
-        key: ${{ runner.os }}-${{ steps.prepare.outputs.sha }}
+        key: ${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
       if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./build.sh
