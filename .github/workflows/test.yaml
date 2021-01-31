@@ -23,7 +23,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: build/bin
-        key: neomura-setup-cli-action-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
+        key: neomura-setup-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
       if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./build.sh
@@ -57,7 +57,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: build/bin
-        key: neomura-setup-cli-action-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
+        key: neomura-setup-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
       if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./build.sh
