@@ -19,6 +19,7 @@ jobs:
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - run: bash ./install.sh
     - uses: actions/setup-node@v2
       with:
         node-version: '14.x'
@@ -29,4 +30,5 @@ jobs:
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - run: bash ./install.sh
     - run: bash ./test.sh

@@ -28,5 +28,3 @@ cmake -E make_directory build
 cmake -E chdir build cmake -G Ninja -DENABLE_UI=OFF ../clone/submodules/aseprite/aseprite
 cd build
 ninja
-
-echo "$PWD/bin" >> $GITHUB_PATH

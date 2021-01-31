@@ -12,3 +12,6 @@ runs:
     env:
       NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.ACTION_REPOSITORY }}
       NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.ACTION_REF }}
+  - run: ./install.sh
+    shell: bash
+    working-directory: ${{ GITHUB.ACTION_PATH }}
