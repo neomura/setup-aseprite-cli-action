@@ -15,10 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1
-    - run: bash ./build.sh
+    - run: bash ./prepare.sh
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - run: bash ./build.sh
     - run: bash ./install.sh
     - uses: actions/setup-node@v2
       with:
@@ -40,9 +41,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1
-    - run: bash ./build.sh
+    - run: bash ./prepare.sh
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - run: bash ./build.sh
     - run: bash ./install.sh
     - run: bash ./test.sh
