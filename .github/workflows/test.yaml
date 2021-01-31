@@ -1,7 +1,7 @@
 on: [push, pull_request]
 
 jobs:
-  test:
+  test-first-run:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -25,7 +25,21 @@ jobs:
         node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
     - run: bash ./test.sh
-    - run: bash -c "rm -rf clone"
+  test-subsequent-run:
+    needs: test-first-run
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+        - windows-2019
+        - windows-2016
+        - ubuntu-20.04
+        - ubuntu-18.04
+        - macos-11.0
+        - macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ilammy/msvc-dev-cmd@v1
     - run: bash ./build.sh
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
