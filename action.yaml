@@ -17,6 +17,7 @@ runs:
       path: clone/bin
       key: ${{ runner.os }}-${{ steps.prepare.outputs.sha }}
   - run: ./build.sh
+    if: steps.cache.outputs.cache-hit != 'true'
     shell: bash
     working-directory: ${{ GITHUB.ACTION_PATH }}
   - run: ./install.sh
