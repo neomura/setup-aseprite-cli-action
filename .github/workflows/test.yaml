@@ -15,11 +15,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1
-    - run: bash ./prepare.sh
+    - id: prepare
+      run: bash ./prepare.sh
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - id: cache
+      uses: actions/cache@v2
+      with:
+        path: clone/bin
+        key: ${{ runner.os }}-${{ steps.prepare.outputs.sha }}
     - run: bash ./build.sh
+      if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./install.sh
     - uses: actions/setup-node@v2
       with:
@@ -41,10 +48,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1
-    - run: bash ./prepare.sh
+    - id: prepare
+      run: bash ./prepare.sh
       env:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    - id: cache
+      uses: actions/cache@v2
+      with:
+        path: clone/bin
+        key: ${{ runner.os }}-${{ steps.prepare.outputs.sha }}
     - run: bash ./build.sh
+      if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./install.sh
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://registry.npmjs.org'
     - run: bash ./test.sh
