@@ -23,15 +23,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    # load your repository.
+    # Load your repository.
     - uses: actions/checkout@v2
 
-    # install MSVC - only needed on Windows.
+    # Install MSVC - only needed on Windows.
     - uses: ilammy/msvc-dev-cmd@v1
 
-    # install this github action.
+    # Install this github action.
     - uses: neomura/setup-aseprite-cli-action@v1.0.0
 
-    # aseprite is now available on the path.
+    # Aseprite is now available on the path.
     - run: aseprite --help
 ```
