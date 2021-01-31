@@ -11,6 +11,8 @@ runs:
     env:
       NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
       NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+    shell: bash
+    working-directory: ${{ GITHUB.ACTION_PATH }}
   - id: cache
     uses: actions/cache@v2
     with:
