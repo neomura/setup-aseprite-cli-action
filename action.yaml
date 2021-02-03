@@ -9,8 +9,8 @@ runs:
   - id: prepare
     run: bash ./prepare.sh
     env:
-      NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
-      NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
+      NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.ACTION_REPOSITORY }}
+      NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.ACTION_REF }}
     shell: bash
     working-directory: ${{ GITHUB.ACTION_PATH }}
   # Disabled until the resolution of https://github.com/actions/runner/issues/646
