@@ -20,7 +20,7 @@ runs:
   #     path: ${{ GITHUB.ACTION_PATH }}/build/bin
   #     key: neomura-setup-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ runner.os }}-${{ steps.prepare.outputs.sha }}
   - run: ./build.sh
-    if: steps.cache.outputs.cache-hit != 'true'
+    # if: steps.cache.outputs.cache-hit != 'true'
     shell: bash
     working-directory: ${{ GITHUB.ACTION_PATH }}
   - run: ./install.sh
