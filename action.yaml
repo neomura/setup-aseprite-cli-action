@@ -1,5 +1,5 @@
 name: setup-aseprite-cli-action
-description: github action to build and install aseprite cli
+description: GitHub Action to build and install the Aseprite CLI.
 branding:
   icon: terminal
   color: white
