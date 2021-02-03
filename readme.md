@@ -33,4 +33,5 @@ jobs:
 
     # Aseprite is now available on the path.
     - run: aseprite --help
+      shell: bash
 ```
