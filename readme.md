@@ -6,8 +6,7 @@ GitHub Action to build and install the Aseprite CLI.
 
 While this repository is [MIT licensed](./license.md), it includes a Git submodule of the [Aseprite repository](https://github.com/aseprite/aseprite), which uses a proprietary license.
 
-The owner and maintainer of Aseprite has [given their approval](https://community.aseprite.org/t/integrating-aseprite-with-travis-ci/1351) to the building and executing of the source code for CI purposes, but you should
-make your own checks to ensure that your usage of this GitHub Action is valid within the Aseprite license agreement.
+The owner and maintainer of Aseprite has [given their approval](https://community.aseprite.org/t/integrating-aseprite-with-travis-ci/1351) to the building and executing of the source code for CI purposes, but you should make your own checks to ensure that your usage of this GitHub Action is valid within the Aseprite license agreement.
 
 ## Supported virtual environments
 
