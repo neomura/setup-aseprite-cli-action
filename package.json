@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jasmine": "3.6.3",
-    "@types/pngjs": "3.4.2",
+    "@types/pngjs": "6.0.0",
     "@typescript-eslint/eslint-plugin": "4.14.2",
     "@typescript-eslint/parser": "4.14.2",
     "eslint": "7.19.0",
