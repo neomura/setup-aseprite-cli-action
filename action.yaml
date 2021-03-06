@@ -18,7 +18,7 @@ runs:
   #   uses: actions/cache@v2
   #   with:
   #     path: ${{ GITHUB.ACTION_PATH }}/build/bin
-  #     key: neomura-setup-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ runner.os }}-${{ steps.prepare.outputs.sha }}
+  #     key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ runner.os }}-${{ steps.prepare.outputs.sha }}
   - run: ./build.sh
     # if: steps.cache.outputs.cache-hit != 'true'
     shell: bash
