@@ -1,7 +1,5 @@
 set -e
 
-ls /home/runner/work/setup-openscad-cli-action/setup-openscad-cli-action/submodules/openscad/openscad
-
 rm -rf ./test/actual
 
 aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
