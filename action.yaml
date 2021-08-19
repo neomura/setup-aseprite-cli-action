@@ -13,14 +13,13 @@ runs:
       NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.ACTION_REF }}
     shell: bash
     working-directory: ${{ GITHUB.ACTION_PATH }}
-  # Disabled until the resolution of https://github.com/actions/runner/issues/646
-  # - id: cache
-  #   uses: actions/cache@v2
-  #   with:
-  #     path: ${{ GITHUB.ACTION_PATH }}/build/bin
-  #     key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ runner.os }}-${{ steps.prepare.outputs.sha }}
+  - id: cache
+    uses: actions/cache@v2
+    with:
+      path: ${{ GITHUB.ACTION_PATH }}/build/bin
+      key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ runner.os }}-${{ steps.prepare.outputs.sha }}
   - run: ./build.sh
-    # if: steps.cache.outputs.cache-hit != 'true'
+    if: steps.cache.outputs.cache-hit != 'true'
     shell: bash
     working-directory: ${{ GITHUB.ACTION_PATH }}
   - run: ./install.sh
