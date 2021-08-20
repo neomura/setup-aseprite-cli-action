@@ -1,6 +1,6 @@
 set -e
 
-if [ ! -f "$PWD/build/bin/aseprite"]; then
+if [ ! -f "$PWD/build/bin/aseprite" ]; then
   echo "Skipping build as cache hit."
 fi
 
