@@ -1,5 +1,9 @@
 set -e
 
+if [ ! -f "$PWD/build/bin/aseprite"]; then
+  echo "Skipping build as cache hit."
+fi
+
 cd clone
 git checkout temp
 

@@ -25,9 +25,7 @@ jobs:
         path: build/bin
         key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
-      if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./build.sh
-      if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./install.sh
     - uses: actions/setup-node@v2
       with:
@@ -59,9 +57,7 @@ jobs:
         path: build/bin
         key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
     - uses: ilammy/msvc-dev-cmd@v1
-      if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./build.sh
-      if: steps.cache.outputs.cache-hit != 'true'
     - run: bash ./install.sh
     - uses: actions/setup-node@v2
       with:
