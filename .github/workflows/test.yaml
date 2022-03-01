@@ -13,7 +13,7 @@ jobs:
         - macos-11.0
         - macos-10.15
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - id: prepare
       run: bash ./prepare.sh
       env:
@@ -45,7 +45,7 @@ jobs:
         - macos-11.0
         - macos-10.15
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - id: prepare
       run: bash ./prepare.sh
       env:
