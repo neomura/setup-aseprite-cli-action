@@ -10,4 +10,4 @@ git checkout temp
 
 git submodule update --init --recursive --depth 1 submodules/aseprite/aseprite
 cd submodules/aseprite/aseprite
-bash ./build.sh
+bash ./build.sh --auto --norun
