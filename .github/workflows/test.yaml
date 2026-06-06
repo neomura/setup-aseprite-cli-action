@@ -30,9 +30,9 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
     - run: bash ./build.sh
     - run: bash ./install.sh
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v6
       with:
-        node-version: '14.x'
+        node-version: '26.3'
         registry-url: 'https://registry.npmjs.org'
     - run: bash ./test.sh
   test-subsequent-run:
@@ -65,8 +65,8 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
     - run: bash ./build.sh
     - run: bash ./install.sh
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v6
       with:
-        node-version: '14.x'
+        node-version: '26.3'
         registry-url: 'https://registry.npmjs.org'
     - run: bash ./test.sh
