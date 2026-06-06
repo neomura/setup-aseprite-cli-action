@@ -4,8 +4,7 @@ rm -rf ./test/actual
 
 aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
 
-cmp <(ls ./test/actual) <(echo "example.json
-example1.png
+cmp <(ls ./test/actual | sort) <(echo "example1.png
 example2.png
 example3.png
 example4.png
@@ -13,7 +12,8 @@ example5.png
 example6.png
 example7.png
 example8.png
-example9.png")
+example9.png
+example.json")
 
 npm ci
 
