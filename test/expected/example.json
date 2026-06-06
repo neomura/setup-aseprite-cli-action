@@ -73,7 +73,7 @@
    }
  },
  "meta": {
-  "app": "http://www.aseprite.org/",
+  "app": "https://www.aseprite.org/",
   "version": "1.x-dev",
   "format": "I8",
   "size": { "w": 432, "h": 32 },
