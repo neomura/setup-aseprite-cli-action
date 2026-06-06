@@ -1,6 +1,6 @@
 set -e
 
-if [ -f "$PWD/build/bin/aseprite" ]; then
+if [ -f "$PWD/clone/submodules/aseprite/aseprite/build/bin/aseprite" ]; then
   echo "Skipping build as cache hit."
   exit 0
 fi

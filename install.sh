@@ -1,5 +1,3 @@
 set -e
 
-ls
-
-echo "$PWD/build/bin" >> $GITHUB_PATH
+echo "$PWD/clone/submodules/aseprite/aseprite/build/bin" >> $GITHUB_PATH
