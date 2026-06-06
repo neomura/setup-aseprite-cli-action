@@ -7,7 +7,7 @@ fi
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   sudo apt-get update
-  sudo apt-get install libxcb1-dev
+  sudo apt-get install libxcb1-dev libxcursor-dev
 fi
 
 cd clone
