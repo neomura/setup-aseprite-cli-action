@@ -37,8 +37,6 @@ cmp ./test/expected/example7.rgba ./test/actual/example7.rgba
 cmp ./test/expected/example8.rgba ./test/actual/example8.rgba
 cmp ./test/expected/example9.rgba ./test/actual/example9.rgba
 
-jq -cS . ./test/actual/example.json
-
 if [ "$(uname)" == "Darwin" ]; then
   cmp <(jq -cS . ./test/expected/example-macos.json) <(jq -cS . ./test/actual/example.json)
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
