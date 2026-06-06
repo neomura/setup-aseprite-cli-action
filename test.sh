@@ -2,7 +2,7 @@ set -e
 
 rm -rf ./test/actual
 
-./submodules/aseprite/aseprite/build/bin/aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
+aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
 
 cmp <(ls ./test/actual | env LC_ALL=C sort) <(echo "example.json
 example1.png
