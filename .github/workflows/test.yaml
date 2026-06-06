@@ -15,7 +15,6 @@ jobs:
         - macos-15-intel
         - macos-26-intel
         - macos-15
-        - macos-26
     steps:
     - uses: actions/checkout@v3
     - id: prepare
@@ -51,7 +50,6 @@ jobs:
         - macos-15-intel
         - macos-26-intel
         - macos-15
-        - macos-26
     steps:
     - uses: actions/checkout@v3
     - id: prepare
