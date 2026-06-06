@@ -44,12 +44,18 @@ jobs:
     strategy:
       matrix:
         os:
-        - windows-2019
-        - windows-2016
-        - ubuntu-20.04
-        - ubuntu-18.04
-        - macos-11.0
-        - macos-10.15
+        - windows-2025
+        - windows-2025-vs2026
+        - windows-2022
+        - windows-11-arm
+        - ubuntu-24.04
+        - ubuntu-22.04
+        - ubuntu-24.04-arm
+        - ubuntu-22.04-arm
+        - macos-15-intel
+        - macos-26-intel
+        - macos-15
+        - macos-26
     steps:
     - uses: actions/checkout@v3
     - id: prepare
