@@ -5,6 +5,11 @@ if [ -f "$PWD/clone/submodules/aseprite/aseprite/build/bin/aseprite" ]; then
   exit 0
 fi
 
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  sudo apt-get update
+  sudo apt-get install libxcb-dev
+fi
+
 cd clone
 git checkout temp
 
