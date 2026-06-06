@@ -37,4 +37,6 @@ cmp ./test/expected/example7.rgba ./test/actual/example7.rgba
 cmp ./test/expected/example8.rgba ./test/actual/example8.rgba
 cmp ./test/expected/example9.rgba ./test/actual/example9.rgba
 
+jq -cS . ./test/expected/example.json
+jq -cS . ./test/actual/example.json
 cmp <(jq -cS . ./test/expected/example.json) <(jq -cS . ./test/actual/example.json)
