@@ -14,7 +14,7 @@ runs:
     shell: bash
     working-directory: ${{ GITHUB.ACTION_PATH }}
   - id: cache
-    uses: actions/cache@v3
+    uses: actions/cache@v5
     with:
       path: ${{ GITHUB.ACTION_PATH }}/clone/submodules/aseprite/aseprite/build/bin
       key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ runner.os }}-${{ steps.prepare.outputs.sha }}
