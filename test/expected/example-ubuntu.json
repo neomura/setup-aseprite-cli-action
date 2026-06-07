@@ -79,9 +79,9 @@
   "size": { "w": 432, "h": 32 },
   "scale": "1",
   "frameTags": [
-   { "name": "tag_a_name", "from": 0, "to": 2, "direction": "forward" },
-   { "name": "tag_b_name", "from": 3, "to": 5, "direction": "reverse" },
-   { "name": "tag_c_name", "from": 6, "to": 8, "direction": "pingpong" }
+   { "name": "tag_a_name", "from": 0, "to": 2, "direction": "forward", "color": "#000000ff" },
+   { "name": "tag_b_name", "from": 3, "to": 5, "direction": "reverse", "color": "#000000ff" },
+   { "name": "tag_c_name", "from": 6, "to": 8, "direction": "pingpong", "color": "#000000ff" }
   ]
  }
 }

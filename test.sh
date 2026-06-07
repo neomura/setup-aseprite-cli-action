@@ -4,7 +4,7 @@ rm -rf ./test/actual
 
 aseprite --batch --list-tags --trim ./test/example.ase --data ./test/actual/example.json --save-as ./test/actual/example.png
 
-cmp <(ls ./test/actual) <(echo "example.json
+cmp <(ls ./test/actual | env LC_ALL=C sort) <(echo "example.json
 example1.png
 example2.png
 example3.png
@@ -37,4 +37,10 @@ cmp ./test/expected/example7.rgba ./test/actual/example7.rgba
 cmp ./test/expected/example8.rgba ./test/actual/example8.rgba
 cmp ./test/expected/example9.rgba ./test/actual/example9.rgba
 
-cmp <(jq -cS . ./test/expected/example.json) <(jq -cS . ./test/actual/example.json)
+if [ "$(uname)" == "Darwin" ]; then
+  cmp <(jq -cS . ./test/expected/example-macos.json) <(jq -cS . ./test/actual/example.json)
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  cmp <(jq -cS . ./test/expected/example-ubuntu.json) <(jq -cS . ./test/actual/example.json)
+else
+  cmp <(jq -cS . ./test/expected/example-windows.json) <(jq -cS . ./test/actual/example.json)
+fi
