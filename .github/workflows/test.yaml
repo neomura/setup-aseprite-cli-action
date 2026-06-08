@@ -15,7 +15,7 @@ jobs:
         - macos-26-intel
         - macos-15
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
     - id: prepare
       run: bash ./prepare.sh
       env:
@@ -49,7 +49,7 @@ jobs:
         - macos-26-intel
         - macos-15
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
     - id: prepare
       run: bash ./prepare.sh
       env:
