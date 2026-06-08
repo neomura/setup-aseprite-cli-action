@@ -27,7 +27,7 @@
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.20.0",
     "eslint-config-prettier": "8.10.2",
-    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-prettier": "4.2.5",
     "pngjs": "7.0.0",
     "prettier": "2.7.1",
     "ts-node": "10.9.1",
