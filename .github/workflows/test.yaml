@@ -22,7 +22,7 @@ jobs:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
     - id: cache
-      uses: actions/cache@v5
+      uses: actions/cache@v6
       with:
         path: clone/submodules/aseprite/aseprite/build/bin
         key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
@@ -56,7 +56,7 @@ jobs:
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REPOSITORY: ${{ GITHUB.REPOSITORY }}
         NEOMURA_SETUP_ASEPRITE_CLI_ACTION_REF: ${{ GITHUB.REF }}
     - id: cache
-      uses: actions/cache@v5
+      uses: actions/cache@v6
       with:
         path: clone/submodules/aseprite/aseprite/build/bin
         key: neomura-setup-aseprite-cli-action-${{ GITHUB.REPOSITORY }}-${{ GITHUB.REF }}-${{ matrix.os }}-${{ steps.prepare.outputs.sha }}
